@@ -1,0 +1,76 @@
+{
+    "id":"docs-typo3-org",
+    "roles":{
+        "typo3_docs":[
+            "packages",
+            "user",
+            "mysql",
+            "php5",
+            "apache2",
+            "app",
+            "restructuredtext"
+        ]
+    },
+    "owner":"docstypo3org",
+    "group":"docstypo3org",
+    "home":"/var/www/vhosts/docs.typo3.org/home",
+    "deploy_to":"/var/www/vhosts/docs.typo3.org/releases",
+    "repository":"git://git.typo3.org/Sites/DocsTypo3Org.git",
+    "revision":{
+        "production":"HEAD^"
+    },
+    "databases":{
+        "production":{
+            "encoding":"utf8",
+            "database":"docstypo3org",
+            "username":"docstypo3org",
+            "adapter":"mysql",
+            "host":"127.0.0.1"
+        }
+    },
+    "stages":{
+        "production":{
+            "log_directory":"/var/www/vhosts/docs.typo3.org/log",
+            "document_root":"/var/www/vhosts/docs.typo3.org/www",
+            "server_name":"docs.typo3.org",
+            "server_aliases":[
+                "*.docs.typo3.org"
+            ],
+            "fqdn":"docs.typo3.org"
+        }
+    },
+    "packages":{
+        "curl":"",
+        "tidy":"",
+        "mercurial":"",
+        "graphicsmagick":"",
+        "graphviz":"",
+
+        "openoffice.org":"",
+        "openoffice.org-headless":"",
+        "ttf-mscorefonts-installer":"",
+
+        "texlive":"",
+        "texlive-base":"",
+        "texlive-latex-extra":"",
+
+        "python":"",
+        "python-pygments":"",
+        "python-jinja2":"",
+        "python-docutils":"",
+        "python-pip":"",
+        "python-pygraphviz":"",
+        "python-mysqldb":"",
+        "python3-setuptools":"",
+
+        "php5-mysql":"",
+        "php5-curl":"",
+        "php5-gd":"",
+        "php5-adodb":"",
+        "php5-mcrypt":"",
+        "php5-sqlite":"",
+        "php5-xsl":"",
+        "php5-ldap":"",
+        "php5-suhosin":""
+    }
+}
