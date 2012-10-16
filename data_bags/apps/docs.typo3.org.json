@@ -17,7 +17,7 @@
     "deploy_to":"/var/www/vhosts/docs.typo3.org/releases",
     "repository":"git://git.typo3.org/Sites/DocsTypo3Org.git",
     "revision":{
-        "production":"HEAD^"
+        "production":"origin/master"
     },
     "databases":{
         "production":{
