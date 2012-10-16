@@ -38,9 +38,9 @@ SITE
 GIT
   remote: git://git.typo3.org/Teams/Server/Chef-Cookbooks/site-docs.git
   ref: master
-  sha: 1b92e75dd894bcddd343a48e9075336814bf8e64
+  sha: 3776383b097461ea980533a0b4fbdb7a053322ff
   specs:
-    site-docs (1.0.0)
+    site-docs (1.0.1)
       apache2 (>= 0.0.0)
       beanstalkd (>= 0.0.0)
       database (>= 0.0.0)
