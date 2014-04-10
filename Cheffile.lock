@@ -36,6 +36,20 @@ SITE
     yum (1.0.0)
 
 GIT
+  remote: git://github.com/edelight/chef-solo-search.git
+  ref: master
+  sha: 4079db540b9b2b00fb383cba8c30f24c2c3bfbb4
+  specs:
+    chef-solo-search (0.5.1)
+
+GIT
+  remote: git://github.com/typo3-cookbooks/locales.git
+  ref: master
+  sha: f2daa6da957c7e36448cd07b3a35194ebc9d77c6
+  specs:
+    locales (0.0.2)
+
+GIT
   remote: https://github.com/TYPO3-cookbooks/site-docstypo3org.git
   ref: master
   sha: e432b77097ef1b059dcb9467a5d833d40cd216a7
@@ -47,20 +61,6 @@ GIT
       mysql (>= 0.0.0)
       php (>= 0.0.0)
       python (>= 0.0.0)
-
-GIT
-  remote: git://github.com/edelight/chef-solo-search.git
-  ref: master
-  sha: 83fd5c5da1d32f53dba782cafaf8fad9f17b76a8
-  specs:
-    chef-solo-search (0.4.0)
-
-GIT
-  remote: git://github.com/typo3-cookbooks/locales.git
-  ref: master
-  sha: f2daa6da957c7e36448cd07b3a35194ebc9d77c6
-  specs:
-    locales (0.0.2)
 
 DEPENDENCIES
   apache2 (= 1.0.8)
