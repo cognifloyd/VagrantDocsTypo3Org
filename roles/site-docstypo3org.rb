@@ -3,9 +3,8 @@ description "Server hosting the docs websites"
 
 run_list(
   "recipe[beanstalkd]",
-  "recipe[site-docs]",
+  "recipe[site-docstypo3org]",
   "recipe[user::data_bag]"
-  #"recipe[minitest-handler]"
 )
 
 # Attributes applied no matter what the node has set already.
