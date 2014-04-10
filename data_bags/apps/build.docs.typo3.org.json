@@ -1,5 +1,5 @@
 {
-    "id":"docs-typo3-org",
+    "id":"build-docs-typo3-org",
     "roles":{
         "typo3_docs":[
             "packages",
@@ -11,10 +11,10 @@
             "restructuredtext"
         ]
     },
-    "owner":"docstypo3org",
-    "group":"docstypo3org",
-    "home":"/var/www/vhosts/docs.typo3.org/home",
-    "deploy_to":"/var/www/vhosts/docs.typo3.org/releases",
+    "owner":"builddocstypo3org",
+    "group":"builddocstypo3org",
+    "home":"/var/www/vhosts/build.docs.typo3.org/home",
+    "deploy_to":"/var/www/vhosts/build.docs.typo3.org/releases",
     "repository":"git://git.typo3.org/Sites/DocsTypo3Org.git",
     "revision":{
         "production":"origin/master"
@@ -22,21 +22,21 @@
     "databases":{
         "production":{
             "encoding":"utf8",
-            "database":"docstypo3org",
-            "username":"docstypo3org",
+            "database":"builddocstypo3org",
+            "username":"builddocstypo3org",
             "adapter":"mysql",
             "host":"127.0.0.1"
         }
     },
     "stages":{
         "production":{
-            "log_directory":"/var/www/vhosts/docs.typo3.org/log",
-            "document_root":"/var/www/vhosts/docs.typo3.org/www",
-            "server_name":"docs.typo3.org",
+            "log_directory":"/var/www/vhosts/build.docs.typo3.org/log",
+            "document_root":"/var/www/vhosts/build.docs.typo3.org/www",
+            "server_name":"build.docs.typo3.org",
             "server_aliases":[
-                "*.docs.typo3.org"
+                "*.build.docs.typo3.org"
             ],
-            "fqdn":"docs.typo3.org"
+            "fqdn":"build.docs.typo3.org"
         }
     },
     "packages":{
@@ -48,7 +48,6 @@
 
         "openoffice.org":"",
         "openoffice.org-headless":"",
-        "ttf-mscorefonts-installer":"",
 
         "texlive":"",
         "texlive-base":"",
