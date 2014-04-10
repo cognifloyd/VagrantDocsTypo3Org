@@ -3,6 +3,7 @@ description "Server hosting the docs websites"
 
 run_list(
   "recipe[beanstalkd]",
+  "recipe[chef-solo-search]",
   "recipe[site-docstypo3org]",
   "recipe[user::data_bag]"
 )
