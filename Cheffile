@@ -25,5 +25,5 @@ cookbook 'locales',
 cookbook 'chef-solo-search',
   :git => 'git://github.com/edelight/chef-solo-search.git'
 
-cookbook 'site-docs',
-  :git => 'git://git.typo3.org/Teams/Server/Chef-Cookbooks/site-docs.git'
+cookbook 'site-docstypo3org',
+  :git => 'https://github.com/TYPO3-cookbooks/site-docstypo3org.git'

@@ -36,11 +36,11 @@ SITE
     yum (1.0.0)
 
 GIT
-  remote: git://git.typo3.org/Teams/Server/Chef-Cookbooks/site-docs.git
+  remote: https://github.com/TYPO3-cookbooks/site-docstypo3org.git
   ref: master
-  sha: 3776383b097461ea980533a0b4fbdb7a053322ff
+  sha: e432b77097ef1b059dcb9467a5d833d40cd216a7
   specs:
-    site-docs (1.0.1)
+    site-docstypo3org (1.0.1)
       apache2 (>= 0.0.0)
       beanstalkd (>= 0.0.0)
       database (>= 0.0.0)
@@ -79,6 +79,6 @@ DEPENDENCIES
   python (= 1.0.8)
   rsync (= 0.7)
   screen (= 0.7)
-  site-docs (>= 0)
+  site-docstypo3org (>= 0)
   user (= 0.2.12)
 
