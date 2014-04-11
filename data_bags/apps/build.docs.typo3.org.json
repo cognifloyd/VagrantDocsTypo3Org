@@ -4,6 +4,7 @@
         "typo3_docs":[
             "packages",
             "user",
+            "gem",
             "mysql",
             "php5",
             "apache2",
