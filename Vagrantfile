@@ -4,6 +4,7 @@ boxes = [
     :ip => '192.168.188.130',
     :run_list => 'role[site-docstypo3org]',
     :memory => 512,
+    :hostname => 'build.docs.typo3.org'
   },
   # For later use
   #{
@@ -14,19 +15,18 @@ boxes = [
   #}
 ]
 
-Vagrant.configure("2") do |config|
+Vagrant.require_version ">= 1.5.0"
 
-  #config.ssh.insert_key = true
+Vagrant.configure("2") do |config|
 
   # VAGRANT_BOX (like all the other ENV['...']) is an environment variable,
   # which can be set for the current shell session via
   #   $ export VAGRANT_BOX=wheezy
   # or can be added to your shell profile (e.g. ~/.bash_profile)
-  base_box = ENV['VAGRANT_BOX'] || "squeeze"
+  base_box = ENV['VAGRANT_BOX'] || "chef/debian-7.4"
   domain = ENV['VAGRANT_DOMAIN'] || "typo3.box"
 
   config.vm.box = base_box
-  config.vm.box_url = "https://dl.dropbox.com/u/1467717/VirtualBoxes/squeeze.box"
 
   # Detects vagrant-cachier plugin (`vagrant plugin install vagrant-cachier`)
   if Vagrant.has_plugin?('vagrant-cachier')
@@ -51,7 +51,7 @@ Vagrant.configure("2") do |config|
       config.vm.network :private_network, ip: opts[:ip]
       config.vm.network :forwarded_port, guest: 80, host: opts[:http_port], id: "http" if opts[:http_port]
 
-      memory = opts[:memory] || 512
+      memory = opts[:memory] || 1024
       cpus = opts[:cpus] || 2
 
       # VirtualBox is the provider by default
@@ -71,6 +71,25 @@ Vagrant.configure("2") do |config|
         vmware.vmx['numvcpus'] = cpus
         vmware.vmx['displayName'] = "%s.#{domain}" % opts[:name].to_s
       end
+
+      # disable default shared folder
+      config.vm.synced_folder ".", "/vagrant", disabled: true
+
+      # share site folder into releases folder
+      config.vm.synced_folder opts[:hostname].to_s, "/var/www/vhosts/" + opts[:hostname].to_s + "/releases/vagrant",
+        type: "rsync",
+        rsync__exclude: [
+          ".git/",
+          ".idea/",
+          ".DS_Store",
+          "Configuration/PackageStates.php",
+          "Configuration/Production/",
+          "Configuration/Development/",
+          "Data/Temporary/",
+          "Data/Surf/",
+          "Data/Logs/",
+          "Web/_Resources/"
+        ]
 
       config.vm.provision :chef_solo do |chef|
         chef.cookbooks_path  = ["cookbooks", "site-cookbooks"]
