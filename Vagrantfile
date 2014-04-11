@@ -81,9 +81,9 @@ Vagrant.configure("2") do |config|
         # Define common roles
         run_list = []
         run_list << ['role[debian]']
+        run_list << ['role[vagrant]']
         run_list << opts[:run_list].split(",") if opts[:run_list]
         run_list << ENV['CHEF_RUN_LIST'].split(",") if ENV.has_key?('CHEF_RUN_LIST')
-        run_list << ['role[vagrant]']
         chef.run_list = [run_list].flatten
       end
     end
