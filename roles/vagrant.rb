@@ -6,15 +6,10 @@ run_list(
 
 override_attributes(
   "mysql" => {
-    "server_root_password"      => "foobarbazbam",
+    "server_root_password"      => "root",
     "tunable" => {
       "key_buffer"              => "32M",
       "innodb_buffer_pool_size" => "128M"
-    }
-  },
-  "etherpadlite" => {
-    "database" => {
-      "password" => "foobarbazbam"
     }
   },
   "apache" => {
@@ -30,16 +25,4 @@ override_attributes(
       #"*"    => "vagrant"
     }
   },
-
-  "zabbix" => {
-    "server" => {
-      "dbpassword" => "zabbixxx"
-    }
-  },
-
-  "gerrit" => {
-  },
-  "gitweb" => {
-    "hostname" => "git.typo3-chef-repo.dev"
-  }
 )
