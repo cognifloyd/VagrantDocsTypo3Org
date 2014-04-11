@@ -48,8 +48,7 @@
         "graphicsmagick":"",
         "graphviz":"",
 
-        "openoffice.org":"",
-        "openoffice.org-headless":"",
+        "libreoffice":"",
 
         "texlive":"",
         "texlive-base":"",
@@ -72,7 +71,6 @@
         "php5-mcrypt":"",
         "php5-sqlite":"",
         "php5-xsl":"",
-        "php5-ldap":"",
-        "php5-suhosin":""
+        "php5-ldap":""
     }
 }
