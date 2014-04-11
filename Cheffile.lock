@@ -66,7 +66,7 @@ GIT
 GIT
   remote: https://github.com/TYPO3-cookbooks/site-docstypo3org.git
   ref: master
-  sha: f72aa204be89b70381be7dc7e587e24c234fba56
+  sha: 2760e7c31d9a3b08ec1da05c13e08d38e0fe865b
   specs:
     site-docstypo3org (1.0.1)
       apache2 (>= 0.0.0)
