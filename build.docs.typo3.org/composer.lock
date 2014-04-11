@@ -896,7 +896,7 @@
             "source": {
                 "type": "git",
                 "url": "git://git.typo3.org/Packages/TYPO3.Docs.git",
-                "reference": "b31d40984c7ae9bc788e971de848cdccc66dcb12"
+                "reference": "971f9f4120296fad7bc19b006e7f09cc10def095"
             },
             "require": {
                 "typo3/flow": "*",
@@ -914,7 +914,7 @@
                 "GPL-3.0+"
             ],
             "description": "The orchestration package for the TYPO3 documentation rendering system",
-            "time": "2014-04-11 13:08:02"
+            "time": "2014-04-11 20:48:22"
         },
         {
             "name": "typo3/eel",
