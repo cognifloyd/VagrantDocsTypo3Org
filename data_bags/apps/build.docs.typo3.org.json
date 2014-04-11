@@ -14,7 +14,8 @@
     },
     "owner":"builddocstypo3org",
     "group":"builddocstypo3org",
-    "home":"/var/www/vhosts/build.docs.typo3.org/home",
+    "owner_home":"/var/www/vhosts/build.docs.typo3.org/home",
+    "home":"/var/www/vhosts/build.docs.typo3.org",
     "deploy_to":"/var/www/vhosts/build.docs.typo3.org/releases",
     "repository":"git://git.typo3.org/Sites/DocsTypo3Org.git",
     "revision":{
