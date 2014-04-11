@@ -24,7 +24,7 @@
         "production":{
             "encoding":"utf8",
             "database":"builddocstypo3org",
-            "username":"builddocstypo3org",
+            "username":"builddocstypo3or",
             "adapter":"mysql",
             "host":"127.0.0.1"
         }
