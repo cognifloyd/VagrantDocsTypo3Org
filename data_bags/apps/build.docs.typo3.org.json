@@ -4,7 +4,7 @@
         "typo3_docs":[
             "packages",
             "user",
-            "mysql"
+            "mysql",
             "php5",
             "apache2",
             "app",
