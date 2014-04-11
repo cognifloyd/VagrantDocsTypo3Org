@@ -21,10 +21,13 @@ cookbook "postfix",               "= 1.0.0"
 cookbook "user",                  "= 0.2.12"
 
 cookbook 'locales',
-  :git => 'git://github.com/typo3-cookbooks/locales.git'
+  :git => 'git://github.com/TYPO3-cookbooks/locales.git'
 
 cookbook 'chef-solo-search',
   :git => 'git://github.com/edelight/chef-solo-search.git'
 
 cookbook 'site-docstypo3org',
   :git => 'https://github.com/TYPO3-cookbooks/site-docstypo3org.git'
+
+cookbook 'hg',
+  :git => 'https://github.com/TYPO3-cookbooks/hg.git'
