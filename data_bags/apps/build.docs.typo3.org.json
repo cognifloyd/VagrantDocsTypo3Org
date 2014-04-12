@@ -53,6 +53,7 @@
         "texlive":"",
         "texlive-base":"",
         "texlive-latex-extra":"",
+        "texlive-fonts-extra":"",
 
         "python":"",
         "python-pygments":"",
