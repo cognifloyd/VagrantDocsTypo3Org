@@ -14,11 +14,16 @@
         {
             "type": "git",
             "url": "git://git.typo3.org/Documentation/RestTools.git"
+        },
+        {
+            "type": "git",
+            "url": "git@github.com:xperseguers/TYPO3.docs.ter-automation.git"
         }
     ],
     "require": {
         "typo3/docs-renderinghub": "dev-master",
 
+        "typo3/docs-builder": "dev-renderinghub-integration as 1.0.0",
         "typo3/resttools": "@dev",
         "typo3/swiftmailer": "*",
         "typo3/jobqueue-beanstalkd": "@dev",

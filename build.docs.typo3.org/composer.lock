@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "ba3165f5b0a1023588924ad6b7bb0d2e",
+    "hash": "2272748a9d62c7a4d6d2e62846aebd30",
     "packages": [
         {
             "name": "composer/installers",
@@ -891,14 +891,35 @@
             "time": "2013-05-10 00:09:46"
         },
         {
+            "name": "typo3/docs-builder",
+            "version": "dev-renderinghub-integration",
+            "source": {
+                "type": "git",
+                "url": "git@github.com:xperseguers/TYPO3.docs.ter-automation.git",
+                "reference": "d447e7b5d93010402939402464ceae2355e4cc2f"
+            },
+            "type": "typo3-flow-package",
+            "autoload": {
+                "psr-4": {
+                    "Causal\\Docst3o\\": "Classes"
+                }
+            },
+            "license": [
+                "GPL-3.0+"
+            ],
+            "homepage": "https://github.com/xperseguers/TYPO3.docs.ter-automation",
+            "time": "2014-04-12 10:33:45"
+        },
+        {
             "name": "typo3/docs-renderinghub",
             "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "git://git.typo3.org/Packages/TYPO3.Docs.git",
-                "reference": "de0cfd6f8889587b72872b542bc6c41bb919a801"
+                "reference": "f39f5b5338925ca15e461054222ff38fe1482537"
             },
             "require": {
+                "typo3/docs-builder": "*",
                 "typo3/flow": "*",
                 "typo3/jobqueue-beanstalkd": "*",
                 "typo3/resttools": "*",
@@ -915,7 +936,7 @@
                 "GPL-3.0+"
             ],
             "description": "The orchestration package for the TYPO3 documentation rendering system",
-            "time": "2014-04-11 21:55:35"
+            "time": "2014-04-12 12:38:31"
         },
         {
             "name": "typo3/eel",
@@ -1805,11 +1826,17 @@
         }
     ],
     "aliases": [
-
+        {
+            "alias": "1.0.0",
+            "alias_normalized": "1.0.0.0",
+            "version": "dev-renderinghub-integration",
+            "package": "typo3/docs-builder"
+        }
     ],
     "minimum-stability": "stable",
     "stability-flags": {
         "typo3/docs-renderinghub": 20,
+        "typo3/docs-builder": 20,
         "typo3/resttools": 20,
         "typo3/jobqueue-beanstalkd": 20,
         "typo3/jobqueue-common": 20,
