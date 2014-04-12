@@ -896,13 +896,14 @@
             "source": {
                 "type": "git",
                 "url": "git://git.typo3.org/Packages/TYPO3.Docs.git",
-                "reference": "971f9f4120296fad7bc19b006e7f09cc10def095"
+                "reference": "de0cfd6f8889587b72872b542bc6c41bb919a801"
             },
             "require": {
                 "typo3/flow": "*",
                 "typo3/jobqueue-beanstalkd": "*",
                 "typo3/resttools": "*",
-                "typo3/swiftmailer": "*"
+                "typo3/swiftmailer": "*",
+                "typo3/twitter-bootstrap": "*"
             },
             "type": "typo3-flow-package",
             "autoload": {
@@ -914,7 +915,7 @@
                 "GPL-3.0+"
             ],
             "description": "The orchestration package for the TYPO3 documentation rendering system",
-            "time": "2014-04-11 20:48:22"
+            "time": "2014-04-11 21:55:35"
         },
         {
             "name": "typo3/eel",
@@ -1118,6 +1119,30 @@
             ],
             "description": "A TYPO3 Flow package of SwiftMailer",
             "time": "2013-10-18 07:38:18"
+        },
+        {
+            "name": "typo3/twitter-bootstrap",
+            "version": "1.0.1",
+            "source": {
+                "type": "git",
+                "url": "git://git.typo3.org/Packages/TYPO3.Twitter.Bootstrap.git",
+                "reference": "997a9f44febb0d7156f0a6598a75eba5752407a1"
+            },
+            "require": {
+                "typo3/flow": "*"
+            },
+            "type": "typo3-flow-package",
+            "autoload": {
+                "psr-0": {
+                    "TYPO3\\Twitter\\Bootstrap": "Classes"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "description": "Simple and flexible HTML, CSS, and Javascript for popular user interface components and interactions. Packaged for use with TYPO3 Flow",
+            "time": "2014-02-13 13:54:53"
         }
     ],
     "packages-dev": [
