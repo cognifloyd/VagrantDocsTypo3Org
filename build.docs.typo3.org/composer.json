@@ -14,10 +14,6 @@
         {
             "type": "git",
             "url": "git://git.typo3.org/Documentation/RestTools.git"
-        },
-        {
-            "type": "mercurial",
-            "url": "https://bitbucket.org/xperseguers/sphinx-contrib"
         }
     ],
     "require": {
