@@ -1,3 +1,6 @@
+##################################################
+# Boxes configuration
+##################################################
 boxes = [
   {
     :name => 'build.docs',
@@ -14,6 +17,20 @@ boxes = [
 ]
 
 Vagrant.require_version ">= 1.5.0"
+
+##################################################
+# Check environment
+##################################################
+unless Vagrant.has_plugin?("vagrant-cachier")
+  raise 'Missing plugin! Install with `vagrant plugin install vagrant-cachier`'
+end
+
+unless Vagrant.has_plugin?("vagrant-omnibus")
+  raise 'Missing plugin! Install with `vagrant plugin install vagrant-omnibus`'
+end
+
+# Trigger installation of environment such as Chef Cookbooks.
+system('./scripts/init.php')
 
 Vagrant.configure("2") do |config|
 
@@ -51,10 +68,14 @@ Vagrant.configure("2") do |config|
       memory = opts[:memory] || 1024
       cpus = opts[:cpus] || 2
 
-	  # VM configuration
+      # General VM configuration
       config.vm.hostname = host_name
       config.vm.network :private_network, ip: opts[:ip]
       config.vm.network :forwarded_port, guest: 80, host: opts[:http_port], id: "http" if opts[:http_port]
+
+      ##################################################
+      # Configure VM for VirtualBox or VMware
+      ##################################################
 
       # VirtualBox is the provider by default
       config.vm.provider :virtualbox do |vbox|
@@ -74,10 +95,14 @@ Vagrant.configure("2") do |config|
         vmware.vmx['displayName'] = host_name
       end
 
-      # disable default shared folder
+      #########################
+      # Shared folders
+      #########################
+
+      # Disable default shared folder
       config.vm.synced_folder ".", "/vagrant", disabled: true
 
-      # share site folder into releases folder
+      # Share site folder into releases folder
       config.vm.synced_folder domain, "/var/www/vhosts/" + domain + "/releases/vagrant",
         type: "rsync",
         rsync__exclude: [
@@ -92,6 +117,10 @@ Vagrant.configure("2") do |config|
           "Data/Logs/",
           "Web/_Resources/"
         ]
+
+      #########################
+      # Chef provisioner
+      #########################
 
       config.vm.provision :chef_solo do |chef|
         chef.cookbooks_path  = ["cookbooks", "site-cookbooks"]

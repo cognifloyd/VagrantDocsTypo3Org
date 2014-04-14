@@ -8,23 +8,23 @@ h1. Quick set up guide
 
 <pre>
 
+	# Prerequisite: VirtualBox must be > 4.3
+	# Download from https://www.virtualbox.org/wiki/Downloads
+	VirtualBox --help | grep VirtualBox
+
+	# Prerequisite: vagrant must be > 1.5
+	# Download from http://www.vagrantup.com/downloads.html
+	vagrant --version
+
+	# Install Vagrant plugin, will be asked anyway later.
+	vagrant plugin install vagrant-cachier
+	vagrant plugin install vagrant-omnibus
+
 	# Get the source
 	git clone git://git.typo3.org/Teams/Server/Vagrant/DocsTypo3Org.git
 
-	# Test if your system contains all the necessary software.
-	# "gem" is used to install package (like pear) and is sometimes compiling the package to a native extension.
-	# Make sure to have the necessary software installed to compile e.g. "make" and "configure" command must be available
-	gem --help          -> Install Ruby if missing
-	vagrant --help      -> Refer to "Vagrant" and "Virtualbox" chapter if command missing
-	bundle help         -> Refer to "Gems" chapter if command missing
-
 	# Install Gem dependencies
 	cd DocsTypo3Org
-	bundle install
-
-	# Download and install the necessary cookbooks
-	librarian-chef install
-	# /var/lib/gems/1.8/bin/librarian-chef install   # on Ubuntu 12.04
 
 	# Fire up the Virtual Machine... this may take some time
 	vagrant up
@@ -72,15 +72,6 @@ h2. Virtualbox
 VirtualBox is a powerful x86 and AMD64/Intel64 virtualization product for enterprise as well as home use.
 Follow this download link to install it on your system https://www.virtualbox.org/wiki/Downloads
 
-h2. Gems
-
-Bundler manages an application's dependencies through its entire life across many machines systematically and repeatably.
-
-<pre>
-	# Run as sudo if permission issue
-	gem update --system
-	gem install bundler --no-ri --no-rdoc
-</pre>
 
 h1. Configure Vagrant file
 
@@ -93,15 +84,3 @@ To adjust configuration open ``Vagrantfile`` file and change settings according 
 	# Turn on verbose Chef logging if necessary
 	chef.log_level      = :debug
 </pre>
-
-h2. Troubleshooting
-
-h3. Installing librarian-chef fails with Xcode 5.1
-
-If you see an error message like this:
-
-@clang: error: unknown argument: '-multiply_definedsuppress' [-Wunused-command-line-argument-hard-error-in-future]@
-
-then there is a fix for this:
-
-@curl https://gist.githubusercontent.com/Paulche/9713531/raw/1e57fbb440d36ca5607d1739cc6151f373b234b6/gistfile1.txt | sudo patch /System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/lib/ruby/2.0.0/universal-darwin13/rbconfig.rb@
