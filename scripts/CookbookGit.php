@@ -46,11 +46,16 @@ class CookbookGit {
 				exec($command);
 			}
 		} else {
-			if ($this->getCurrentRevision() !== $this->revision && $this->doSync()) {
-				$command = sprintf('cd cookbooks/%s; git fetch', $this->name);
-				exec($command);
-				$command = sprintf('cd cookbooks/%s; git checkout %s', $this->name, $this->revision);
-				exec($command);
+			if ($this->doSync()) {
+				if ($this->revision === 'HEAD') {
+					$command = sprintf('cd cookbooks/%s; git pull', $this->name);
+					exec($command);
+				} elseif ($this->getCurrentRevision() !== $this->revision) {
+					$command = sprintf('cd cookbooks/%s; git fetch', $this->name);
+					exec($command);
+					$command = sprintf('cd cookbooks/%s; git checkout %s', $this->name, $this->revision);
+					exec($command);
+				}
 			}
 		}
 	}
