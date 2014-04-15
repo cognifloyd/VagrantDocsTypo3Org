@@ -28,6 +28,16 @@ class Bootstrap {
 	 *
 	 * @return void
 	 */
+	public function downloadFlowApplication() {
+		$application = new ApplicationManager();
+		$application->download();
+	}
+
+	/**
+	 * Synchronize Git Cookbooks.
+	 *
+	 * @return void
+	 */
 	public function syncGitCookbooks() {
 		$settings = $this->getSettigs();
 
