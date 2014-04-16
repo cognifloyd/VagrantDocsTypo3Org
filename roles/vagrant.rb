@@ -25,4 +25,9 @@ override_attributes(
       #"*"    => "vagrant"
     }
   },
+  "site-docstypo3org" => {
+    "flow" => {
+      "context" => 'Development/Vagrant'
+    }
+  }
 )

@@ -12,11 +12,12 @@
             "libreoffice"
         ]
     },
-    "owner":"builddocstypo3org",
-    "group":"builddocstypo3org",
-    "owner_home":"/home/builddocstypo3org",
+    "owner":"vagrant",
+    "group":"vagrant",
+    "owner_home":"/home/vagrant",
     "home":"/var/www/vhosts/build.docs.typo3.org",
     "deploy_to":"/var/www/vhosts/build.docs.typo3.org/releases",
+    "shared_to":"/var/www/vhosts/build.docs.typo3.org/shared",
     "repository":"git://git.typo3.org/Sites/DocsTypo3Org.git",
     "revision":{
         "production":"origin/master"
@@ -35,14 +36,12 @@
             "log_directory":"/var/www/vhosts/build.docs.typo3.org/log",
             "document_root":"/var/www/vhosts/build.docs.typo3.org/www",
             "server_name":"build.docs.typo3.org",
-            "server_aliases":[
-                "*.build.docs.typo3.org"
-            ],
+            "flow_context":"Development/Vagrant",
+            "server_alias": "build.docs.typo3.dev build.docs.typo3.local",
             "fqdn":"build.docs.typo3.org"
         }
     },
     "packages":{
-        "curl":"",
         "tidy":"",
         "acl":"",
         "zip":"",

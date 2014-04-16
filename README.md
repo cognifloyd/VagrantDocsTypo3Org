@@ -36,6 +36,10 @@ h1. Quick set up guide
 	# The default username / password is vagrant / vagrant
 	ssh vagrant@192.168.156.131
 
+	# Configure /etc/hosts so that you can access the box from the host
+	sudo nano /etc/hosts
+	> 192.168.188.130 build.docs.typo3.dev
+
 	# Time to play with the application
 	sudo su - builddocstypo3org
 	export FLOW_CONTEXT=Development/Vagrant
