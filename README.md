@@ -29,6 +29,10 @@ h1. Quick set up guide
 	# Fire up the Virtual Machine... this may take some time
 	vagrant up
 
+	# It could provisioning does not succeed at the first time.
+	# In case things go wrong, relaunch the provisioning:
+	vagrant provision
+
 	# Once the machine is set up you can enter the virtual machine by using vagrant itself.
 	vagrant ssh
 
