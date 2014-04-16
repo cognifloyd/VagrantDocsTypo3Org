@@ -44,6 +44,8 @@
     "packages":{
         "curl":"",
         "tidy":"",
+        "acl":"",
+        "zip":"",
         "mercurial":"",
         "graphicsmagick":"",
         "graphviz":"",
