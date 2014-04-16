@@ -6,7 +6,6 @@ run_list(
   "recipe[chef_handler]",
   "recipe[base]",
   "recipe[locales]",
-  "recipe[openssh]",
   "recipe[git]",
   "recipe[rsync]",
   "recipe[screen]",
