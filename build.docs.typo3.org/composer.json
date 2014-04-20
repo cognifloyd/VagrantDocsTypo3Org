@@ -17,7 +17,7 @@
         },
         {
             "type": "git",
-            "url": "git@github.com:xperseguers/TYPO3.docs.ter-automation.git"
+            "url": "git://github.com/xperseguers/TYPO3.docs.ter-automation.git"
         }
     ],
     "require": {
