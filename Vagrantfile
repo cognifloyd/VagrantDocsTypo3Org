@@ -30,7 +30,8 @@ unless Vagrant.has_plugin?("vagrant-omnibus")
 end
 
 # Trigger installation of environment such as Chef Cookbooks.
-system('./scripts/init.php')
+system('./scripts/cookbooks.php')
+system('./scripts/composer.bash')
 
 Vagrant.configure("2") do |config|
 

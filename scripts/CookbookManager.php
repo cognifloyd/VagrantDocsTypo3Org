@@ -3,7 +3,7 @@
 /**
  * Bootstrap environment.
  */
-class Bootstrap {
+class CookbookManager {
 
 	/**
 	 * Synchronize Opscode Cookbooks.
@@ -21,16 +21,6 @@ class Bootstrap {
 				$cookbook->download();
 			}
 		}
-	}
-
-	/**
-	 * Synchronize Git Cookbooks.
-	 *
-	 * @return void
-	 */
-	public function downloadFlowApplication() {
-		$application = new ApplicationManager();
-		$application->download();
 	}
 
 	/**
