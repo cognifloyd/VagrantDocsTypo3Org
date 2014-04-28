@@ -11,7 +11,7 @@ class Bootstrap {
 	 * @return void
 	 */
 	public function syncOpscodeCookbooks() {
-		$settings = $this->getSettigs();
+		$settings = $this->getSettings();
 
 		foreach ($settings['community.opscode.com'] as $cookbook => $version) {
 
@@ -39,7 +39,7 @@ class Bootstrap {
 	 * @return void
 	 */
 	public function syncGitCookbooks() {
-		$settings = $this->getSettigs();
+		$settings = $this->getSettings();
 
 		foreach ($settings['git'] as $cookbook => $repository) {
 			$cookbook = new CookbookGit($cookbook, $repository['url'], $repository['revision']);
@@ -50,7 +50,7 @@ class Bootstrap {
 	/**
 	 * @return array
 	 */
-	protected function getSettigs() {
+	protected function getSettings() {
 		$settings = parse_ini_file(SETTING_FILE, true);
 		return $settings;
 	}
