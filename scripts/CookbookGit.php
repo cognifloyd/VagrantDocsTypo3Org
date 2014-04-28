@@ -42,7 +42,7 @@ class CookbookGit {
 
 			// Position cursor on good revision just after pulling
 			if ($this->getCurrentRevision() !== $this->revision) {
-				$command = sprintf('cd cookbooks/%s; git checkout %s', $this->name, $this->revision);
+				$command = sprintf('cd cookbooks/%s; git checkout -q %s', $this->name, $this->revision);
 				exec($command);
 			}
 		} else {
@@ -53,7 +53,7 @@ class CookbookGit {
 				} elseif ($this->getCurrentRevision() !== $this->revision) {
 					$command = sprintf('cd cookbooks/%s; git fetch', $this->name);
 					exec($command);
-					$command = sprintf('cd cookbooks/%s; git checkout %s', $this->name, $this->revision);
+					$command = sprintf('cd cookbooks/%s; git checkout -q %s', $this->name, $this->revision);
 					exec($command);
 				}
 			}
