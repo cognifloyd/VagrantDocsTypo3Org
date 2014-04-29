@@ -1,10 +1,12 @@
-h1. Overview
+Overview
+========
 
 This is a repository used for setting up a development version of docs.typo3.org website.
 
 For the first installation, consider one good hour to walk through all the steps which will depend on the speed of your network along to the the performance of your machine. There will about 500 Mb to download which includes a virtual machine and the necessary packages.
 
-h1. Quick set up guide
+Quick set up guide
+------------------
 
 <pre>
 
@@ -69,19 +71,22 @@ h1. Quick set up guide
 	./flow queue:start
 </pre>
 
-h1. Installation of the software
+Installation of the software
+============================
 
-h2. Vagrant
+Vagrant
+-------
 
 Vagrant can be downloaded and installed from the website http://www.vagrantup.com/downloads.html
 
-h2. Virtualbox
+Virtualbox
+----------
 
 VirtualBox is a powerful x86 and AMD64/Intel64 virtualization product for enterprise as well as home use.
 Follow this download link to install it on your system https://www.virtualbox.org/wiki/Downloads
 
-
-h1. Configure Vagrant file
+Configure Vagrant file
+----------------------
 
 To adjust configuration open ``Vagrantfile`` file and change settings according to your needs.
 
