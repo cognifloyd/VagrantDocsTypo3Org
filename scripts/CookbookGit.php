@@ -48,7 +48,7 @@ class CookbookGit {
 		} else {
 			if ($this->doSync()) {
 				if ($this->revision === 'HEAD') {
-					$command = sprintf('cd cookbooks/%s; git pull', $this->name);
+					$command = sprintf('cd cookbooks/%s; git pull -q', $this->name);
 					exec($command);
 				} elseif ($this->getCurrentRevision() !== $this->revision) {
 					$command = sprintf('cd cookbooks/%s; git fetch', $this->name);
