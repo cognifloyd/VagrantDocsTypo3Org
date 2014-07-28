@@ -63,7 +63,7 @@ class CookbookOpscode {
 	 * Download Cookbook
 	 */
 	public function download() {
-		$url = sprintf('http://community.opscode.com/cookbooks/%s/versions/%s/downloads',
+		$url = sprintf('http://supermarket.getchef.com/cookbooks/%s/versions/%s/download',
 			$this->name,
 			str_replace('.', '_', $this->version)
 		);
